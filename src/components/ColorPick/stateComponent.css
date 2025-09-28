@@ -1,0 +1,65 @@
+/* Contenedor principal */
+.box-container {
+  background: linear-gradient(135deg, #e0f7ff, #ffffff);
+  border: 2px solid #b3e5fc;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 320px;
+  margin: 15px auto;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 150, 200, 0.15);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #023e73;
+}
+
+/* Texto */
+.box-container p {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Preview del color */
+.color-preview {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1px solid #023e73;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Contenedor de botones */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Botones */
+.button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #81d4fa;
+  color: #023e73;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 150, 200, 0.2);
+}
+
+/* Hover bonito */
+.button:hover {
+  background: #4fc3f7;
+  transform: translateY(-2px);
+}
+
+/* Activo */
+.button:active {
+  background: #0288d1;
+  color: #fff;
+  transform: translateY(0);
+}

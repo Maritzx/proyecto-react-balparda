@@ -1,64 +1,87 @@
-/* Estilos para la barra de navegación */
+/* Navbar.css */
+
+/* CONTENEDOR PRINCIPAL */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
-  padding: 5px 5px;
-  color: #fff;
-  position: fixed;  
+  background: #ffffff; /* blanco limpio */
+  padding: 14px 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
   z-index: 1000;
 }
 
-/* Texto de bienvenida */
-.Bienvenida {
-  font-size: 1.2rem;
+/* LOGO */
+.navbar-logo {
+  font-size: 1.6rem;
   font-weight: bold;
-  color: #f5c518; 
-  margin-right: 20px;
+  color: #0077cc; /* celeste */
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+.navbar-logo:hover {
+  color: #005fa3;
 }
 
-/* Logo */
-.logo {
-  width: 100px;
-  height: auto;
-  border-radius: 8px; /* esquinas redondeadas */
-}
-
-/* Links de navegación */
+/* LINKS */
 .navbar-links {
-  list-style: none;
   display: flex;
-  gap: 15px;
-  margin: 0;
-  padding: 0;
+  gap: 28px;
 }
 
-.navbar-links li {
-  display: inline-block;
-}
-
-.navbar-links button {
-  background: none;
-  border: 2px solid transparent;
-  color: #fff;
+.navbar-links a {
+  text-decoration: none;
+  color: #333333;
   font-size: 1rem;
-  padding: 6px 12px;
-  border-radius: 6px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #0077cc;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #0077cc;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* LINK ACTIVO (NavLink) */
+.navbar-links .active {
+  color: #0077cc;
+  font-weight: 600;
+}
+.navbar-links .active::after {
+  width: 100%;
+}
+
+/* BOTÓN CARRITO */
+.cart-button {
+  background: #0077cc;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
-
-.navbar-links button:hover {
-  border-color: #f5c518;
-  color: #f5c518;
+.cart-button:hover {
+  background: #005fa3;
+  transform: translateY(-2px);
 }
-
-.cart-widget {
-  margin-left: 20px;
-  margin-right: 20px; 
-}
-

@@ -1,0 +1,77 @@
+/* ItemListContainer.css */
+
+.item-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f8fcff; /* blanco azulado */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 90, 160, 0.1);
+}
+
+.item-list-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #0077cc;
+  margin-bottom: 15px;
+}
+
+.item-list-container h4 {
+  font-size: 1.3rem;
+  color: #005f99;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #0077cc;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.item-list-container__loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #0077cc;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+/* GRID de productos */
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Item individual (se combina con el CSS del componente Item.jsx si lo tienes) */
+.item-list .item-card {
+  background: #ffffff;
+  border: 1px solid #dceeff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-list .item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 90, 160, 0.2);
+}
+
+.item-list .item-card-title {
+  color: #004d80;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.item-list .item-card-img {
+  max-width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.item-list .item-card-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #0099cc;
+}

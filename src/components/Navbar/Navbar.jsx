@@ -5,9 +5,10 @@ import "./Navbar.css";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <a href="/">
-      <span className="Bienvenida">Bienvenidos a bocannada store</span>
-      </a>
+     <Link to="/">
+      <span className="nombre-tienda">BOCANNADA STORE</span>
+      </Link>
+      
       <div className="navbar-left">
         <img
           className="logo"
@@ -18,16 +19,30 @@ export default function Navbar() {
       </div>
 
      <ul className="navbar-links">
-      <li><Link to="/Detalle"></Link></li>
-  <li><Link to="/category/electrodomesticos">Electrodomésticos</Link></li>
-  <li><Link to="/muebles">Muebles</Link></li>
-  <li><Link to="/tecnologia">Tecnología</Link></li>
-  <li><Link to="/juguetes">Juguetes</Link></li>
-</ul>
+      <li>
+        <Link to="/Category/electrodomesticos">
+        Electrodomésticos
+        </Link>
+        </li>
+  <li>
+    <Link to="/category/muebles">
+    Muebles
+    </Link>
+    </li>
+  <li
+  ><Link to="/category/tecnologia"> 
+  Tecnología
+  </Link>
+  </li>
+  <li>
+    <Link to="/category/juguetes">
+    Juguetes
+    </Link>
+    </li>
+   </ul>
+    <Link to="/cart">
+    <span><CartWidget/></span>
+    </Link>
+   </nav>  );
+} 
 
-      <div className="cart-widget">
-        <CartWidget />
-      </div>
-    </nav>
-  );
-}
