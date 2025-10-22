@@ -1,11 +1,13 @@
-import StateComponent from "../ColorPick/StateComponent";
+import StateComponent from "../ColorPick/StateComponent.jsx";
 import { useParams } from "react-router";
-import { getProductById } from "../../data/mockAPI";
-import { useEffect, useState} from "react";
+import { getProductById } from "../../data/firebase";
+import { useEffect, useState, useContext} from "react";
+import  cartContext  from "../../context/cartContext.jsx";    
 
 function ItemDetailContainer() { 
     const { idParam } = useParams();
     const [product, setProduct] = useState( {loading: true} );
+    const context = useContext(cartContext);
 
     useEffect(() => {
         getProductById(idParam)
@@ -20,8 +22,8 @@ function ItemDetailContainer() {
 
 return ( <div className="itemCard" > 
     <h2 className="itemCardTitle">{product.title}</h2>
-    <img 
-    className="itemCardImg"
+        <img 
+        className="itemCardImg"
     height="700"
     src={product.img}
     alt={product.title}
@@ -31,8 +33,10 @@ return ( <div className="itemCard" >
     <div style={{ textAlign: "center"}}>
         <p>{product.description}</p>
     </div>
-    <button>Agregar al carrito</button>
+    <div>
+    <button onClick={() => context.addToCart(product)}>Agregar al carrito</button>
    </div>
+</div>
 )
 }
 

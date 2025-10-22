@@ -15,7 +15,7 @@ function Item( {id, title, img, price} ) {
 
 <h3 className="item-card-price">Precio: ${price}</h3>
 <div style= {{textAlign: "center" }}> 
-    <Link to={`/Detalle/${id}`}>
+    <Link to={`/detalle/${id}`}>
         <button>Ir a ver el detalle</button>
     </Link>
 </div>

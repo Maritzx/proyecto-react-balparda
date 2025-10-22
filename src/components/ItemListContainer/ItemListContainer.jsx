@@ -1,5 +1,5 @@
 import Item from '../Item/Item.jsx';
-import getMockAPIdata, {getProductsByCateg} from "../../data/mockAPI";
+import { getProducts, getProductsByCateg } from '../../data/firebase';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import "./ItemListContainer.css";
@@ -12,6 +12,7 @@ export default function ItemListContainer(props) {
 
   useEffect(() => {
     setIsloading(true);
+
 if (categParam) {
   getProductsByCateg(categParam)
   .then( ProductsByCateg => setProducts(ProductsByCateg) )
@@ -19,7 +20,7 @@ if (categParam) {
   .finally( () => setIsloading(false) );
 }
 else
-    getMockAPIdata()
+    getProducts()
       .then((productsList) => {
         console.log("Promesa terminada");
         setProducts(productsList);
@@ -32,6 +33,7 @@ else
         console.log("Promesa finalizada");
         setIsloading(false);
       });
+      
   }, [ categParam]);
 
  
