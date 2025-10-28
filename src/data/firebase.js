@@ -5,12 +5,12 @@ import products from "./products";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCD6bjW4_CSBk9Si2OrLHS4-CANKnIUb-c",
+  apiKey: import.meta.env.VITE_FS_APIKEY,
   authDomain: "proyecto-react-772ba.firebaseapp.com",
-  projectId: "proyecto-react-772ba",
+  projectId: import.meta.env.VITE_FS_PROJECT_ID,
   storageBucket: "proyecto-react-772ba.firebasestorage.app",
   messagingSenderId: "416217101367",
-  appId: "1:416217101367:web:6bb5a853a867f81078fbb2",
+  appId: import.meta.env.VITE_FS_APP_ID,
   measurementId: "G-CM51V67HRK"
 };
 
