@@ -15,56 +15,69 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = getFirestore(app)
 
 
+export async function getProducts(){
+   const productsRef = collection(db, "products");
 
-export  async function getProducts() {
+   const productsSnapshot = await getDocs(productsRef);
+   // * getDocs(productsRef).then( productsSnapshot => ...)
 
-  // referenciamos la coleccion
- const productsRef = collection(db, "products");
- 
- const productsSnapshot = await getDocs(productsRef);
- 
-// const document0 = productsSnapshot.docs[0];
-  // console.log(document0.data(), document0.id);
+   //const document0 = productsSnapshot.docs[0];
+   //console.log( document0.data(), document0.id ) 
+   // resp.json()
 
-  const documents = productsSnapshot.docs;
-  const dataDocs = documents.map( item =>{ 
-   return { id: item.id, ...item.data() } });
-   
-  return dataDocs;   
+   const documents = productsSnapshot.docs;
+
+   const dataDocs = documents.map( item => {
+    return { id: item.id, ...item.data() }
+   })
+
+   return dataDocs
 }
 
-export async function getProductById(idParam) {
-  const docRef = doc(db, "products", idParam)
-  const docSnapshot = await getDoc(docRef); //esperar a q la fx docRef se cumpla
+/**
+ * Obtiene un unico item de firestore
+ * @param { string } idParam - Representa el ID del documento en Firestore
+ * @returns una promesa a resolver con la data del documento de Firestore
+ */
+export async function getProductById(idParam){
+  const docRef = doc(db, "products", idParam);
+  const docSnapshot = await getDoc(docRef)
   const docData = docSnapshot.data();
-  docData.id = docSnapshot.id;
+  docData.id = docSnapshot.id
 
   return docData;
 }
 
-export async function getProductsByCateg(categParam) {
-  const productsRef = collection(db, "products");
+// ? Esta funcion retorna los productos ordenados segun la categoria
+export async function getProductsByCateg(categParam){
+   const productsRef = collection(db, "products");
+
+   const queryCategory = query(productsRef, where("category", "==", categParam));
+   const productsSnapshot = await getDocs(queryCategory);
   
-  const q = query(productsRef, where("category", "==", categParam)); // por convencion se llama q (puede llamarse de cualquierw manera)
-  const productsSnapshot = await getDocs(q);
 
-  const documents = productsSnapshot.docs;
+   const documents = productsSnapshot.docs;
+   const dataDocs = documents.map( item => {
+    return { id: item.id, ...item.data() }
+   })
 
-  const dataDocs  = documents.map( item =>{ 
-   return { id: item.id, ...item.data() } });
-     
-  return dataDocs;   
+   return dataDocs
+} 
+
+//  2. Crear una "orden" de compras en firebase
+export async function createOrder( orderData){
+   const ordersRef = collection(db, "orders");
+   const newDoc = await addDoc(ordersRef, orderData)   
+   return newDoc;
 }
 
-export async function createOrder(orderData) {
-  const ordersRef = collection(db, "orders");
-  const newDoc = await addDoc(ordersRef, orderData);
-  return newDoc;
-}
+
+// 1. "export" mis productos a firebase
 export async function exportProductsData(){
    const productsRef = collection(db, "products")  
    for( let item of products ){

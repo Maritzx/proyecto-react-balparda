@@ -4,13 +4,13 @@ import StateComponent from "../ColorPick/StateComponent";
 
 
 
-function Item( {id, title, img, price} ) {
+function Item( {id, title, imgURL, price} ) {
     return (
         <div className="item-card">
             <h2 className="item-card-title" 
            > 
             {title}</h2>
-           <img src={img} className="item-card-img" height="300px"
+           <img src={imgURL} className="item-card-img" height="300px"
            alt={title} />
 
 <h3 className="item-card-price">Precio: ${price}</h3>

@@ -1,45 +1,45 @@
-import Item from '../Item/Item.jsx';
+import Item from '../Item/Item';
 import { getProducts, getProductsByCateg } from '../../data/firebase';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import "./ItemListContainer.css";
+import './ItemListContainer.css';
 
-export default function ItemListContainer(props) {
+export default function ItemListContainer( props ){
   const [products, setProducts] = useState([]);
-  const [isLoading, setIsloading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
   const { categParam } = useParams();
 
-
-  useEffect(() => {
-    setIsloading(true);
-
-if (categParam) {
-  getProductsByCateg(categParam)
-  .then( ProductsByCateg => setProducts(ProductsByCateg) )
-  .catch( error => alert(error) )
-  .finally( () => setIsloading(false) );
-}
-else
-    getProducts()
-      .then((productsList) => {
-        console.log("Promesa terminada");
-        setProducts(productsList);
+  useEffect( () => {
+    setIsLoading(true)
+    
+    if (categParam){
+      getProductsByCateg(categParam)
+      .then( productsByCateg => setProducts(productsByCateg))
+      .catch( error => alert(error))
+      .finally( () => setIsLoading(false))
+    }
+    else {    
+      getProducts()
+      .then( (productList) => {
+          console.log("Promesa terminada")
+          setProducts(productList);
       })
-      .catch((error) => {
-        console.log("Error solicitando los datos", error);
-        alert("Algo salio mal buscando los productos")
+      .catch( (error) => {
+          console.log("Error solicitando los datos", error);
+          alert("Algo salió mal buscando los productos")
+      } )
+      .finally( () => { 
+          console.log("Esto se ejecuta siempre")
+          setIsLoading(false)
       })
-      .finally(() => {
-        console.log("Promesa finalizada");
-        setIsloading(false);
-      });
-      
-  }, [ categParam]);
+    }     
+     
+  }, [ categParam ])
 
- 
+
   return (
     <div className="item-list-container" >
-        <h2>{props.greeting}</h2>
+        <h2>{props.children}</h2>
         { isLoading 
           ? <p className="item-list-container__loading">Cargando...</p> 
           : ""

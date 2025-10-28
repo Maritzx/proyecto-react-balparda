@@ -2,7 +2,7 @@ const products = [
   {
     "id": 1,
     "title": "Sofá Modular Gris",
-    "img": "/productos/sofaModular.png",
+    "imgURL": "/productos/sofaModular.png",
     "description": "Un sofá modular de tres plazas, tapizado en tela gris de alta calidad. Versátil y cómodo, se adapta a cualquier sala de estar.",
     "price": 899.99,
     "stock": 15,
@@ -11,7 +11,7 @@ const products = [
   {
     "id": 2,
     "title": "Escritorio de Madera Robusta",
-    "img": "/productos/escritorioModerno.png",
+    "imgURL": "/productos/escritorioModerno.png",
     "description": "Escritorio de diseño moderno fabricado con madera de roble macizo. Ideal para la oficina en casa o el estudio.",
     "price": 350.00,
     "stock": 10,
@@ -20,7 +20,7 @@ const products = [
   {
     "id": 3,
     "title": "Lámpara de Pie Minimalista",
-    "img": "/productos/lamparaPieMinimalista.png",
+    "imgURL": "/productos/lamparaPieMinimalista.png",
     "description": "Lámpara de pie con un diseño minimalista y elegante. Aporta una luz cálida y ambiental a cualquier rincón.",
     "price": 75.50,
     "stock": 50,
@@ -29,7 +29,7 @@ const products = [
   {
     "id": 4,
     "title": "Silla Ergonómica de Oficina",
-    "img": "/productos/sillaErgonometrica.png",
+    "imgURL": "/productos/sillaErgonometrica.png",
     "description": "Silla de oficina con soporte lumbar ajustable, ideal para largas horas de trabajo. Mejora la postura y el confort.",
     "price": 185.75,
     "stock": 25,
@@ -38,7 +38,7 @@ const products = [
   {
     "id": 5,
     "title": "Smart TV 4K de 55 pulgadas",
-    "img": "/productos/smartTv.png",
+    "imgURL": "/productos/smartTv.png",
     "description": "Televisor inteligente con resolución 4K Ultra HD y tecnología HDR. Disfruta de una experiencia visual inmersiva.",
     "price": 649.00,
     "stock": 8,
@@ -47,7 +47,7 @@ const products = [
   {
     "id": 6,
     "title": "Laptop Ultra Delgada",
-    "img": "/productos/laptopUltra.png",
+    "imgURL": "/productos/laptopUltra.png",
     "description": "Una laptop ligera y potente, perfecta para trabajo y entretenimiento. Procesador de última generación y 16GB de RAM.",
     "price": 1200.00,
     "stock": 12,
@@ -56,7 +56,7 @@ const products = [
   {
     "id": 7,
     "title": "Auriculares Inalámbricos con Cancelación de Ruido",
-    "img": "/productos/auricularesInalambricos.png",
+    "imgURL": "/productos/auricularesInalambricos.png",
     "description": "Auriculares que ofrecen un sonido nítido y una cancelación de ruido activa para una inmersión total.",
     "price": 199.99,
     "stock": 30,
@@ -65,7 +65,7 @@ const products = [
   {
     "id": 8,
     "title": "Consola de Videojuegos de Última Generación",
-    "img": "/productos/consolaPs5.png",
+    "imgURL": "/productos/consolaPs5.png",
     "description": "Consola con gráficos de alta fidelidad y un disco SSD ultrarrápido. Incluye un control inalámbrico.",
     "price": 499.00,
     "stock": 5,
@@ -74,7 +74,7 @@ const products = [
   {
     "id": 9,
     "title": "Refrigerador de Doble Puerta",
-    "img": "/productos/refrigeradorDoblePuerta.png",
+    "imgURL": "/productos/refrigeradorDoblePuerta.png",
     "description": "Refrigerador de gran capacidad con dispensador de agua y hielo. Tecnología No Frost y eficiencia energética.",
     "price": 950.00,
     "stock": 7,
@@ -83,7 +83,7 @@ const products = [
   {
     "id": 10,
     "title": "Horno de Microondas Digital",
-    "img": "/productos/microondas.png",
+    "imgURL": "/productos/microondas.png",
     "description": "Microondas con 1000W de potencia, múltiples programas preestablecidos y panel digital fácil de usar.",
     "price": 120.00,
     "stock": 20,
@@ -92,7 +92,7 @@ const products = [
   {
     "id": 11,
     "title": "Cafetera Programable",
-    "img": "/productos/cafeteraProgramable.png",
+    "imgURL": "/productos/cafeteraProgramable.png",
     "description": "Cafetera de goteo programable para preparar tu café antes de despertar. Capacidad de 12 tazas.",
     "price": 65.00,
     "stock": 40,
@@ -101,7 +101,7 @@ const products = [
   {
     "id": 12,
     "title": "Aspiradora Robot Inteligente",
-    "img": "/productos/aspiradoraRobot.png",
+    "imgURL": "/productos/aspiradoraRobot.png",
     "description": "Aspiradora robot que se conecta a Wi-Fi y se controla desde tu smartphone. Limpia automáticamente tu hogar.",
     "price": 250.00,
     "stock": 18,
@@ -110,7 +110,7 @@ const products = [
   {
     "id": 13,
     "title": "Set de Construcción de Ciudad",
-    "img": "/productos/legoConstruccion.png",
+    "imgURL": "/productos/legoConstruccion.png",
     "description": "Un set de 500 piezas para construir una ciudad completa con vehículos, edificios y personajes. Fomenta la creatividad.",
     "price": 45.99,
     "stock": 60,
@@ -119,7 +119,7 @@ const products = [
   {
     "id": 14,
     "title": "Muñeca Articulada de Moda",
-    "img": "/productos/muñecaArticuladaModa.png",
+    "imgURL": "/productos/muñecaArticuladaModa.png",
     "description": "Muñeca con 12 puntos de articulación y ropa de moda intercambiable. Incluye accesorios como zapatos y bolso.",
     "price": 22.50,
     "stock": 80,
@@ -128,7 +128,7 @@ const products = [
   {
     "id": 15,
     "title": "Coche de Control Remoto Todoterreno",
-    "img": "/productos/cocheControlRemoto.png",
+    "imgURL": "/productos/cocheControlRemoto.png",
     "description": "Coche a control remoto con tracción en las cuatro ruedas. Ideal para terrenos difíciles y acrobacias.",
     "price": 55.00,
     "stock": 25,
@@ -137,7 +137,7 @@ const products = [
   {
     "id": 16,
     "title": "Pista de Tren Eléctrico",
-    "img": "/productos/pistaTren.png",
+    "imgURL": "/productos/pistaTren.png",
     "description": "Una pista de tren con locomotora a vapor que emite sonidos reales. Incluye vagones y árboles para el paisaje.",
     "price": 78.90,
     "stock": 15,
@@ -146,7 +146,7 @@ const products = [
   {
     "id": 17,
     "title": "Sofá Cama Futón",
-    "img": "/productos/sofaCama.png",
+    "imgURL": "/productos/sofaCama.png",
     "description": "Un sofá cama convertible y versátil. Se transforma de sofá a una cama cómoda para huéspedes en segundos.",
     "price": 299.00,
     "stock": 9,
@@ -155,7 +155,7 @@ const products = [
   {
     "id": 18,
     "title": "Altavoz Inteligente con Asistente de Voz",
-    "img": "/productos/altavozInteligente.png",
+    "imgURL": "/productos/altavozInteligente.png",
     "description": "Altavoz compacto con asistente de voz integrado. Controla la música, las noticias y tus dispositivos inteligentes.",
     "price": 49.99,
     "stock": 50,
@@ -164,7 +164,7 @@ const products = [
   {
     "id": 19,
     "title": "Licuadora de Alta Potencia",
-    "img": "/productos/licuadoraElectrica.png",
+    "imgURL": "/productos/licuadoraElectrica.png",
     "description": "Licuadora con motor de alta potencia para triturar hielo y frutas congeladas. Vaso de vidrio resistente.",
     "price": 85.00,
     "stock": 35,
@@ -173,7 +173,7 @@ const products = [
   {
     "id": 20,
     "title": "Rompecabezas 3D de Monumentos",
-    "img": "/productos/puzzle3D.png",
+    "imgURL": "/productos/puzzle3D.png",
     "description": "Rompecabezas en 3D para armar réplicas de monumentos famosos. Desarrolla la motricidad fina y la paciencia.",
     "price": 15.99,
     "stock": 70,

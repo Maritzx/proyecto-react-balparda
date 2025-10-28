@@ -5,7 +5,7 @@ import FormCheckout from "./FormCheckout";
 function CartContainer(){
   const { cartItems, removeItem, clearCart } = useContext(cartContext)
 
-  async function handleCheckout(){
+  async function handleCheckout(formData){
   const orderData = {
     buyer: formData,
     items: cartItems,
@@ -30,8 +30,8 @@ function CartContainer(){
       <h3>Tu carrito</h3>
       <div>
         {
-          cartItems.map( item => <div>
-            <img width="100" src={item.imgURL}></img>
+          cartItems.map( item => <div className="cart-item" key={item.id}>
+            <img width="100" src={item.img}></img>
             <h4>{item.title}</h4>
             <p>Unidades: {item.count}</p>
             <p>$ {item.price * item.count}</p>

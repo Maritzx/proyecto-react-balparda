@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar/NavBar.jsx";
 import { BrowserRouter, Routes, Route } from "react-router";
 import  { CartProvider  }  from "./context/cartContext.jsx"; 
 import CartContainer from "./components/CartContainer/CartContainer.jsx";
-import app, { getProducts } from './data/firebase';
+import app, { exportProductsData, getProducts } from './data/firebase';
 
 
 
@@ -20,7 +20,7 @@ export default function App() {
     <CartProvider>
       <BrowserRouter>
         <NavBar />
-   
+  
         <Routes>
 
    <Route path="/" element={<ItemListContainer>Bienvenidos a mi tienda</ItemListContainer>}/>
