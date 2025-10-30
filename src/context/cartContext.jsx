@@ -44,18 +44,16 @@ export function CartProvider(props) {
         const newCart = cartItems.filter( item => item.id !== idRemove)
         setCartItems(newCart)
     }
-
-    // Esta es la función que CartWidget espera
+    
     function countItems() {
         let count = 0;
         cartItems.forEach( item => count += item.count);
         return count;
     }
 
-    // Esta es la función que CartContainer espera
+   
     function totalItemsInCart() {
-        // En este caso, hace lo mismo que countItems, podrías llamarla directamente si quisieras,
-        // pero la mantenemos separada si esperas que en el futuro puedan tener lógicas distintas.
+        
         return countItems(); 
     }
 
@@ -75,8 +73,8 @@ export function CartProvider(props) {
             cartItems, 
             addToCart, 
             removeItemCompleto, 
-            countItems, // Exportamos countItems para CartWidget
-            totalItemsInCart, // Exportamos totalItemsInCart para CartContainer
+            countItems, 
+            totalItemsInCart, 
             totalPriceInCart, 
             removeItem, 
             clearCart

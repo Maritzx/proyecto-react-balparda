@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import cartContext from "../../context/cartContext.jsx"; // <-- RUTA CORREGIDA y asegurando extensión
+import cartContext from "../../context/cartContext.jsx";
 import { createOrder } from "../../data/firebase";
 import FormCheckout from "./FormCheckout";
-// import "./CartContainer.css"; // Descomenta si tienes estilos para este componente
+
 
 function CartContainer(){
-  // Desestructuramos las funciones del contexto que usarás aquí
+  
   const { cartItems, removeItem, removeItemCompleto, clearCart, totalItemsInCart, totalPriceInCart } = useContext(cartContext); 
 
   async function handleCheckout(formData){
